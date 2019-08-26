@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiw="X-UA-Compatible" content="ie=edge">
+    <title>Converter Distance</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <style>
+      body{
+        margin-top: 70px;
+        background-color: #bcd1b6;
+      }
+
+      .card-block{
+        padding: 10px;
+      }
+
+      h1{
+        font-weight: bold;
+        font-family: Consolas;
+        color: #7d5ea8;
+      }
+    </style>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 offset-md-3">
+          <h1 class="display-3 text-center mb-3">Converter Distance</h1>
+          <form>
+          <div class="form-group">
+            <input type="number" id="kmInput" placeholder="Write kilometers..."
+            class="form-control form-control-lg">
+          </div>
+          </form>
+          <div id="output">
+
+            <div class="card alert-warning mb-2">
+              <div class="card-block">
+                <h4>Meters :</h4>
+                <div id="metersOutput"></div>
+              </div>
+            </div>
+
+            <div class="card alert-primary mb-2">
+              <div class="card-block">
+                <h4>Сentimeters :</h4>
+                <div id="centimetersOutput"></div>
+              </div>
+            </div>
+
+            <div class="card alert-success mb-2">
+              <div class="card-block">
+                <h4>Millimeters :</h4>
+                <div id="millimetersOutput"></div>
+              </div>
+            </div>
+
+            <div class="card alert-dark mb-2">
+              <div class="card-block">
+                <h4>Miles :</h4>
+                <div id="milesOutput"></div>
+              </div>
+            </div>
+
+            <div class="card alert-danger mb-2">
+              <div class="card-block">
+                <h4>Yards :</h4>
+                <div id="yardsOutput"></div>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+      document.getElementById('output').style.visibility = 'hidden';
+      document.getElementById('kmInput').addEventListener('input', function(e){
+        document.getElementById('output').style.visibility = 'visible';
+        let km = e.target.value;
+        var a = "m";
+        var b = "cm";
+        var c = "mm";
+        var d = "mi";
+        var g = "ya";
+        document.getElementById('metersOutput').innerHTML = km * 1000 + " " + a;
+        document.getElementById('centimetersOutput').innerHTML = km * 100000 + " " + b;
+        document.getElementById('millimetersOutput').innerHTML = km * 1000000 + " " + c;
+        document.getElementById('milesOutput').innerHTML = km * 0.62 + " " + d;
+        document.getElementById('yardsOutput').innerHTML = km * 1093.61 + " " + g;
+      });
+    </script>
+  </body>
+</html>
