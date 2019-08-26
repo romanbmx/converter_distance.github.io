@@ -7,7 +7,7 @@
     <meta http-equiw="X-UA-Compatible" content="ie=edge">
     <title>Converter Distance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
   </head>
 
   <body>
@@ -44,21 +44,21 @@
         <div class="col-md-5 offset-md-3">
           <h1 class="display-3 text-center mb-3">Converter Distance</h1>
           <div class="btn-block">
-            <button class="btn btn-danger" id="btnKm">Kilometer</button>
+            <a href="../index.html"><button class="btn btn-danger" id="btnKm">Kilometer</button></a>
             <br>
-            <a href="html/meter.html"><button class="btn btn-primary mt-2" id="btnM">Meter</button></a>
+            <a href="meter.html"><button class="btn btn-primary mt-2" id="btnM">Meter</button></a>
             <br>
-            <a href="html/centimeter.html"><button class="btn btn-success mt-2" id="btnCm">Сentimeter</button></a>
+            <a href="centimeter.html"><button class="btn btn-success mt-2" id="btnCm">Сentimeter</button></a>
             <br>
-            <a href="html/millimeter.html"><button class="btn btn-info mt-2" id="btnMm">Millimeter</button></a>
+            <a href="millimeter.html"><button class="btn btn-info mt-2" id="btnMm">Millimeter</button></a>
             <br>
-            <a href="html/mile.html"><button class="btn btn-warning mt-2" id="btnMi">Mile</button></a>
+            <a href="mile.html"><button class="btn btn-warning mt-2" id="btnMi">Mile</button></a>
             <br>
-            <a href="html/yard.html"><button class="btn btn-dark mt-2" id="btnYa">Yard</button></a>
+            <a href="yard.html"><button class="btn btn-dark mt-2" id="btnYa">Yard</button></a>
           </div>
           <form>
           <div class="form-group mt-2">
-            <input type="number" id="kmInput" placeholder="Write kilometers..."
+            <input type="number" id="mInput" placeholder="Write meters..."
             class="form-control form-control-lg">
           </div>
           </form>
@@ -66,8 +66,8 @@
 
             <div class="card alert-warning mb-2">
               <div class="card-block">
-                <h4>Meters:</h4>
-                <div id="metersOutput"></div>
+                <h4>Kilometers:</h4>
+                <div id="kilometersOutput"></div>
               </div>
             </div>
 
@@ -105,19 +105,19 @@
 
     <script>
       document.getElementById('output').style.visibility = 'hidden';
-      document.getElementById('kmInput').addEventListener('input', function(e){
+      document.getElementById('mInput').addEventListener('input', function(e){
         document.getElementById('output').style.visibility = 'visible';
-        let km = e.target.value;
-        var a = "m";
+        let m = e.target.value;
+        var a = "km";
         var b = "cm";
         var c = "mm";
         var d = "mi";
         var g = "yd";
-        document.getElementById('metersOutput').innerHTML = km * 1000 + " " + a;
-        document.getElementById('centimetersOutput').innerHTML = km * 10000 + " " + b;
-        document.getElementById('millimetersOutput').innerHTML = km * 100000 + " " + c;
-        document.getElementById('milesOutput').innerHTML = km * 0.62 + " " + d;
-        document.getElementById('yardsOutput').innerHTML = km * 1093.61 + " " + g;
+        document.getElementById('kilometersOutput').innerHTML = m * 0.01 + " " + a;
+        document.getElementById('centimetersOutput').innerHTML = m * 100 + " " + b;
+        document.getElementById('millimetersOutput').innerHTML = m * 1000 + " " + c;
+        document.getElementById('milesOutput').innerHTML = m * 0.0062 + " " + d;
+        document.getElementById('yardsOutput').innerHTML = m * 10.9361 + " " + g;
       });
     </script>
   </body>
